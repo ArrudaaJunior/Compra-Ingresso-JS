@@ -2,6 +2,11 @@ function comprar(){
     let tipo = document.getElementById('tipo-ingresso');
     let quantidade = parseInt(document.getElementById('qtd').value);
 
+    if(quantidade <= 0) {
+        alert('A quantidade tem que ser positiva e maior que zero');
+        return;
+    }
+
     if(tipo.value == 'pista') {
         comprarPista(quantidade);
     } else if (tipo.value == 'superior') {
